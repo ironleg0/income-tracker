@@ -1,0 +1,27 @@
+:root{
+  --primary:#2ecc71;
+  --bg:#ffffff;
+  --fg:#222;
+  --panel:#ffffff;
+}
+body{font-family:Inter,Segoe UI,Arial,sans-serif;margin:0;background:var(--bg);color:var(--fg);}
+.top-bar{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;background:rgba(0,0,0,0.03);position:sticky;top:0;z-index:5}
+.top-bar .title{font-size:28px;font-weight:700;text-align:center;flex:1}
+.top-bar .left-controls, .top-bar .right-controls{display:flex;gap:10px;align-items:center}
+.subtitle{text-align:center;padding:10px 0;color:rgba(0,0,0,0.6)}
+.forms{display:flex;gap:20px;justify-content:space-around;padding:20px;flex-wrap:wrap}
+.panel{background:var(--panel);padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.06);width:45%;min-width:320px}
+.panel h2{margin-top:0}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.row input[type=date], .row input[type=number], .row input[type=text], .row select{padding:8px;border:1px solid #ddd;border-radius:6px;min-width:120px}
+.row button{background:var(--primary);border:none;color:white;padding:8px 12px;border-radius:6px;cursor:pointer}
+.list{margin-top:12px;max-height:280px;overflow:auto;padding:0;list-style:none}
+.list li{display:flex;justify-content:space-between;padding:8px;border-radius:6px;background:#f6f8f9;margin-bottom:8px;align-items:center}
+.list li .meta{font-size:13px;color:#444;margin-left:8px}
+.totals{display:flex;gap:20px;justify-content:center;padding:10px 20px;font-weight:600}
+.chart-wrap{padding:20px 40px}
+button.remove{background:#e74c3c;padding:6px 8px;border-radius:6px;border:none;color:white;cursor:pointer}
+/* dark theme */
+body.dark{--bg:#121316;--fg:#e6e6e6;--panel:#1c1e22}
+/* responsive small */
+@media (max-width:900px){.panel{width:100%}.top-bar .title{font-size:22px}}
