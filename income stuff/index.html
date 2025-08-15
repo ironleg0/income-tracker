@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Income Tracker</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="light">
+  <div class="top-bar">
+    <div class="left-controls">
+      <button id="exportPdf">Generate PDF Report</button>
+    </div>
+    <div class="title">INCOME TRACKER</div>
+    <div class="right-controls">
+      <label for="themeSelect">Theme</label>
+      <select id="themeSelect" aria-label="Theme selector">
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
+      <input id="colorPicker" type="color" title="Primary color" value="#2ecc71"/>
+    </div>
+  </div>
+
+  <div class="subtitle">
+    <label for="mainCurrency">Chart currency:</label>
+    <select id="mainCurrency">
+      <option value="RON">RON</option>
+      <option value="EUR">EUR</option>
+    </select>
+  </div>
+
+  <div class="forms">
+    <section class="panel">
+      <h2>Income</h2>
+      <div class="row">
+        <input id="incomeDesc" placeholder="Description" type="text">
+        <input id="incomeAmount" placeholder="Amount" type="number" min="0" step="0.01">
+        <select id="incomeCurr"><option>RON</option><option>EUR</option></select>
+        <input id="incomeDate" type="date">
+        <button id="addIncome">Add Income</button>
+      </div>
+      <ul id="incomeList" class="list"></ul>
+    </section>
+
+    <section class="panel">
+      <h2>Spending</h2>
+      <div class="row">
+        <input id="spendDesc" placeholder="Description" type="text">
+        <input id="spendAmount" placeholder="Amount" type="number" min="0" step="0.01">
+        <select id="spendCurr"><option>RON</option><option>EUR</option></select>
+        <input id="spendDate" type="date">
+        <button id="addSpend">Add Spending</button>
+      </div>
+      <ul id="spendList" class="list"></ul>
+    </section>
+  </div>
+
+  <div class="totals">
+    <div>Total Income (RON): <span id="totalIncomeRON">0.00</span></div>
+    <div>Total Spending (RON): <span id="totalSpendRON">0.00</span></div>
+    <div>Total Income (EUR): <span id="totalIncomeEUR">0.00</span></div>
+    <div>Total Spending (EUR): <span id="totalSpendEUR">0.00</span></div>
+  </div>
+
+  <div class="chart-wrap">
+    <canvas id="lineChart" width="1200" height="500"></canvas>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="assets/script.js"></script>
+</body>
+</html>
